@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  thymeleaf:
+    template-loader-path: classpath:/templates
+    suffix: .html
+    cache: false
+
+  messages:
+    basename: validation
