@@ -2,7 +2,6 @@ package com.visa.assesment.model;
 
 import javax.persistence.*;
 import java.util.Set;
-import jdk.jfr.DataAmount;
 import lombok.Getter;
 import lombok.Setter;
 
