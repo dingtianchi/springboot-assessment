@@ -3,6 +3,7 @@ package com.visa.assesment.api;
 import com.visa.assesment.utils.TokenUtils;
 import feign.RequestInterceptor;
 import org.apache.http.entity.ContentType;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,15 +12,22 @@ import java.security.SignatureException;
 @Configuration
 public class ApiConfiguration {
 
+    @Value("${client.visa.apiKey}")
+    private String apiKey;
+
+    @Value("${client.visa.sharedSecret}")
+    private String sharedSecret;
+
+    @Value("${client.visa.resourcePath}")
+    private String resourcePath;
+
     @Bean
     public RequestInterceptor requestInterceptor() {
-        String queryString = "apikey=ETTDNFOWT57R8FNGOWBH21LD3QZlBgvRdehaNLjR1HYW5cwH4";
-        String sharedSecret = "XO8bbmBed4/Qy-Ayw$W1m40mF9{bC-WiaHB}G0/M";
+        String queryString = "apikey=" + apiKey;
         return requestTemplate -> {
             String xPayToken = "";
             try {
-                xPayToken = TokenUtils.generateXpaytoken("helloworld",
-                        queryString, "", sharedSecret);
+                xPayToken = TokenUtils.generateXpaytoken(resourcePath, queryString, "", sharedSecret);
             } catch (SignatureException e) {
                 e.printStackTrace();
             }

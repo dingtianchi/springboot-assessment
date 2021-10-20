@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 //    String getVdpHelloWorld();
 //}
 
-@FeignClient(value = "jplaceholder",
-        url = "https://sandbox.api.visa.com",
+@FeignClient(value = "apiClient",
+        url = "${client.visa.baseUrl}",
         configuration = ApiConfiguration.class)
 public interface VdpHelloWorldClient {
-    @RequestMapping(method = RequestMethod.GET,
-            value = "/vdp/helloworld?apikey=ETTDNFOWT57R8FNGOWBH21LD3QZlBgvRdehaNLjR1HYW5cwH4")
+    @RequestMapping(method = RequestMethod.GET, value = "${client.visa.helloWorldApi}")
     String getVdpHelloWorld();
 }

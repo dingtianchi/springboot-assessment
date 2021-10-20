@@ -24,3 +24,12 @@ feign:
         loggerLevel: full
   httpclient:
     disableSslValidation: true
+
+client:
+  visa:
+    baseUrl: "https://sandbox.api.visa.com"
+    apiKey: "ETTDNFOWT57R8FNGOWBH21LD3QZlBgvRdehaNLjR1HYW5cwH4"
+    sharedSecret: "XO8bbmBed4/Qy-Ayw$W1m40mF9{bC-WiaHB}G0/M"
+    resourcePath: "helloworld"
+    helloWorldApi: "/vdp/helloworld?apikey=ETTDNFOWT57R8FNGOWBH21LD3QZlBgvRdehaNLjR1HYW5cwH4"
+
