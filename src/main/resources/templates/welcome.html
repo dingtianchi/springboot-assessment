@@ -14,7 +14,8 @@
 
         <h2>Welcome <span sec:authentication="name"></span> |
             <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Log Out</button>
+        <button class="btn btn-lg btn-primary btn-block" th:onclick="/hello">Hello World</button>
+        <textarea id="HelloWorldResponse"></textarea>>
     </div>
   </div>
 
@@ -22,5 +23,7 @@
   <script src="/js/popper.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/main.js"></script>
+
+
 </body>
 </html>

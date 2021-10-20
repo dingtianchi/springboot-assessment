@@ -14,3 +14,13 @@ spring:
 
   messages:
     basename: validation
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 10000
+        loggerLevel: full
+  httpclient:
+    disableSslValidation: true

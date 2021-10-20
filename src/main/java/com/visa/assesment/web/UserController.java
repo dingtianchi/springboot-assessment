@@ -1,5 +1,6 @@
 package com.visa.assesment.web;
 
+import com.visa.assesment.api.VdpHelloWorldClient;
 import com.visa.assesment.model.User;
 import com.visa.assesment.service.SecurityService;
 import com.visa.assesment.service.UserService;
@@ -21,6 +22,9 @@ public class UserController {
 
     @Autowired
     private UserValidator userValidator;
+
+    @Autowired
+    private VdpHelloWorldClient vdpHelloWorldClient;
 
     @GetMapping("/registration")
     public String registration(Model model) {
@@ -48,6 +52,8 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
+        String jsonResult = vdpHelloWorldClient.getVdpHelloWorld();
+        System.out.println(jsonResult);
         if (securityService.isAuthenticated()) {
             return "redirect:/";
         }
