@@ -31,9 +31,9 @@ public class ApiConfiguration {
             } catch (SignatureException e) {
                 e.printStackTrace();
             }
+            System.out.println("x-pay-token:" + xPayToken);
             requestTemplate.header("Accept", ContentType.APPLICATION_JSON.getMimeType());
             requestTemplate.header("x-pay-token", xPayToken);
-            requestTemplate.header("X-API-KEY", "SVC_ARM:Pud723UbAP");
         };
     }
 }
