@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span><a mat-button href="https://www.visa.com" style="font-size: larger;">xxxxxxxx</a></span>
+        <span class="example-fill-remaining-space"></span>
+        <span class="align-center"></span>
+        <span class="example-spacer"></span>
+        <a mat-button *ngIf="!authService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a>
+        <a mat-button *ngIf="authService.isUserLoggedIn()" routerLink="/home" class="nav-link">Home</a>
+        <a mat-button *ngIf="authService.isUserLoggedIn()" routerLink="/vdp" class="nav-link">VDP</a>
+        <a mat-button *ngIf="authService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,11 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>VDP helloworld testing</mat-card-title>
+  </mat-card-header>
+  <mat-card-actions>
+    <button mat-raised-button (click)="getVdpHelloWorld()" color="primary">Hello World</button>
+  </mat-card-actions>
+  <mat-card-content>
+    <textarea mat-input [(ngModel)]="response" readonly></textarea>
+  </mat-card-content>
+</mat-card>
