@@ -1,4 +1,4 @@
-# How to run it in local
+# How to demo in your local
 
 ### Backend API services
 ```shell
@@ -11,5 +11,6 @@ mvn spring-boog:run
 ```shell
 cd springboot-assessment/ui
 npm install
+npm run build
 ng serve --open
 ```
