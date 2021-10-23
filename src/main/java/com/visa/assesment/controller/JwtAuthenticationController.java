@@ -34,11 +34,13 @@ public class JwtAuthenticationController {
   public ResponseEntity<?> generateAuthenticationToken(
       @RequestBody JwtRequest authenticationRequest) throws Exception {
 
+    //valid username, password
     authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
     final UserDetails userDetails =
         jwtInMemoryUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 
+    //gen token
     final String token = jwtTokenUtil.generateToken(userDetails);
 
     return ResponseEntity.ok(new JwtResponse(token));

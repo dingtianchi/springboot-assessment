@@ -10,7 +10,10 @@ mvn spring-boog:run
 ### Angular UI
 ```shell
 cd springboot-assessment/ui
+npm install -g @angular/cli
 npm install
-npm run build
+ng build
 ng serve --open
 ```
+
+###Note: disconnect VPN before you click 'Hello World' button in vdp page
